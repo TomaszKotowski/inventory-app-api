@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '223762528279630',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./skeleton.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+
+<div class="app" id="app">
+    <section class="app__auth auth">
+        <div class="row">
+            facebook appId: <code>223762528279630</code>, test user facebook: <code>open_zcsdwqn_user@tfbnw.net, password: Alamakota123</code>
+            <pre>EAADLgsYDHE4BAO0t7iwV4Ik3dYRIdNhBdmXZBZAZCf6UmFvUTGQWVv8pk3wd3tXrWTm1nYBPYBxW2Yn7IIW2Lajk7KUDOFWhBKbX8fEhhDqZB3hhr4pQnJrLz4rGhWH7u1nQX4UBVKFJUZAlpBqkQmLTZBwaaN2mqIN4ZCig51WxAeWQ6JcUve6pT9NWnxuc8Ccl4AnrwBj8VCMKnEZCusZAZCLYyN5TC2bt2ib1AttkCRcecPHMzfDKqW</pre>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <label>login</label>
+                <input v-model="auth.login" class="u-full-width" type="text">
+            </div>
+            <div class="four columns">
+                <label>password</label>
+                <input v-model="auth.password" class="u-full-width" type="password">
+            </div>
+        </div>
+        <div class="row">
+            <button class="button-primary" @click="onBasicLogin">basic login</button>
+        </div>
+        <div class="row">
+            <button class="button-primary" @click="onFacebookLogin">facebook login</button>
+            <button @click="onFacebookAuth">facebook authorization</button>
+            <button @click="onFacebookLoginStatus">check facebook status</button>
+        </div>
+        <div class="row">
+            <button @click="getUsers">get users</button>
+            <button @click="getDevices">get devices</button>
+            <button @click="getOffices">get offices</button>
+            <button @click="getPlaces">get places</button>
+            <button @click="getCurrentUser">get current user</button>
+        </div>
+        <div class="row">
+            <input v-model="exampleId" type="text">
+            <button @click="identify">identify</button>
+        </div>
+        <div class="row">
+            <input v-model="searchDevices" type="text">
+            <button @click="onSearchDevices">search devices</button>
+        </div>
+        <div class="row" v-if="message">
+            <pre>{{ message }}</pre>
+        </div>
+    </section>
+</div>
+
+<script src="./vue.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>
