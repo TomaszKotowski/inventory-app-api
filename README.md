@@ -1,8 +1,10 @@
 # inventory-app-api
 ===
+
 Server for frontend Inventory app 
 
 ##Step 0: Install required packages
+
 ```angular2html
 npm install
 ```
@@ -21,6 +23,7 @@ npm start
 ```
 
 ## Configuration
+
 `config.json`
 ```angular2html
 {
